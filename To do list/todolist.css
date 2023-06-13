@@ -1,36 +1,80 @@
+:root {
+    /* Variaveis de cores para padronizar. */
+    --color-dark: rgb(14, 14, 14);
+    --color-dark2: rgb(32, 32, 32);
+    --color-dark3: rgb(22, 22, 22);
+    --color-white: #fff;
+    --color-green: rgb(103, 195, 80);
+    --color-green2: rgb(51, 149, 26);
+    --color-red: rgb(184, 40, 35);
+    --color-red2: rgb(146, 22, 17);
+}
+
 body {
     background-image: linear-gradient(50deg,rgba(0,150,60,.7), rgba(17, 0, 255, 0.6));
     height: 100vh;
-}
-* {
+    color: var(--color-dark);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    font-family:'Lato';
     text-align: center;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
-}
-h1{
-    font-size: 25px;
 }
 span {
     font-size: 11px;
-    text-decoration:wavy;
     color: rgba(0,0,0,.8);
 }
-p {
-    margin-top: 10px;
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
-input{
-    text-align: right;
+.topo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
 }
-ul{
-    padding-left: 20px;
+#tarefa, 
+#adicionar{
+    text-align: left;
+    border: none;
+    font-size: 16px;
+    outline: none;
+    padding: 16px;
+}
+#tarefa{
     width: 250px;
-    box-shadow: 1px 1px 3px rgba(0,0,0,.5);
-    display: block;
-    position: relative;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    margin: 20px;
+    border-radius: 20px;
 }
-li {
-    color: black;
+#adicionar{
+    background-color: var(--color-dark2);
+    color: var(--color-white);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.8s;
+}
+#adicionar:hover{
+    background-color: var(--color-dark3);
+}
+#tableresul{
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+    gap: 1rem;
+}
+#tableresul li {
+    list-style-type: none;
+    font-size: 23px;
+    text-transform: capitalize;
+    display: flex;
+    justify-content: space-between;
+    border: -1px solid black;
+    box-shadow: 1px 1px 2px rgba(0,0,0,.8);
+    padding: 5px;
 }

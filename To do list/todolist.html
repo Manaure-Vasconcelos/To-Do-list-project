@@ -1,24 +1,33 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="to-dolist.css">
+    <link rel="stylesheet" href="./assets/fonts/fonts.css">
+    <link rel="stylesheet" href="todolist.css">
     <title>To-Do List</title>
 </head>
 <body>
-    <div id="topo">
-        <header id="cabecalho">
-        <h1>To-Do List. <span>Uma maneira simples de organizar seu dia.</span></h1>
-        <p>Meu dia: 
-        <input type="text" id="tarefa"> <button id="adicionar">Adicionar</button></p>
-        </header>         
+    <div class="content">
+        <div class="topo">
+            <h1>To-Do List. <span>Uma maneira simples de organizar seu dia.</span></h1>
+            <p>
+                <!-- foi usado um title para dar uma legenda ao icone, sempre que deixar o mouse parado em cima. -->
+            <input type="text" id="tarefa" placeholder="Digite uma nova tarefa.  "> <button id="adicionar" title="Clique aqui para adicionar uma nova tarefa."> 
+                <!-- Aqui foi importando um icone do bootstrap -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="12" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/>
+              </svg>
+            </button></p>        
+        </div>
+        <div class="result">
+            <ul id="tableresul">
+                <li>alo<button>ok</button></li>
+                <li>alo</li>
+            </ul>
+        </div>   
     </div>
-    <div id="result">
-        <ul id="tableresul">
-        </ul>
-    </div>   
 
-<script src="to-dolist.js"></script>
+<script src="todolist.js"></script>
 </body>
 </html>
