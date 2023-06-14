@@ -1,6 +1,7 @@
 let botao = document.getElementById('adicionar')
 botao.addEventListener('click', adicionar)
 const localStoragekey = 'to-do-list-mv'
+// foi criado um localStorage com um nome padrão.
 
 function adicionar () {
     let tarefa = document.getElementById('tarefa')
@@ -14,13 +15,13 @@ function adicionar () {
         alert('Ja existe uma tarefa com essa descrição.')
     } else {
         //Increment to LocalStorage
-        /* Foi usado o JSON.parse para pegar a string do input e transformar em ARRAY.
+        /* Foi usado o JSON.parse para pegar a string do input e transformar em OBJECT.
         Foi criado uma constante para dar um nome ao elementos. */        
         let valores = JSON.parse(localStorage.getItem(localStoragekey) || "[]")
         valores.push({
             name: tarefa.value
         })
-        localStorage.setItem(localStoragekey, JSON.stringify(valores))
+        localStorage.setItem(localStoragekey, JSON.stringify(valores)) // setItem para selecionar o item. JSON.stringidy = transfoma um objeto em uma string. 
         mostrarvalores () // Chamando a função aqui para mostrar sempre que adicionar.
 
     }
@@ -44,7 +45,7 @@ function mostrarvalores () {
 function remover (data) {
     // Para me enviar exatamente a tarefa que queria excluir, passei o parametro THIS.
     let valores = JSON.parse(localStorage.getItem(localStoragekey) || "[]")
-    let index = valores.findIndex(x => x.name == data)
+    let index = valores.findIndex(x => x.name == data) // findIndex vai procurar se tem algum name igual ao parametro que foi passado. 
     valores.splice(index, 1)
     // foi usado para remover o name selecionado, e logo após exibir novamente as atuais tarefas.
     localStorage.setItem(localStoragekey, JSON.stringify(valores))
