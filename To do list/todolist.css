@@ -20,6 +20,10 @@ body {
     font-family:'Lato'; /* font importada e colocada em font.css */
     text-align: center;
 }
+footer{
+    display: block;
+    position: relative;
+}
 span {
     color: var(--color-white);
     font-size: 12px;
